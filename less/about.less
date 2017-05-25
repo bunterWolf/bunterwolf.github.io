@@ -42,7 +42,6 @@
   }
 
   .ich {
-
     display: flex;
     align-items: stretch;
 
@@ -58,11 +57,31 @@
 
     .text {
       width: ~"calc(50% - 2px)";
+      box-sizing: border-box;
+      padding: 4% 10%;
       display: flex;
       justify-content: center;
       align-items: center;
       color: @color__text__light;
       font-size: 20px;
+
+      h4 {
+        margin-bottom: 0;
+      }
+
+      p {
+        margin-bottom: 20px;
+      }
+
+      blockquote {
+        font-style: italic;
+        margin: 5px 0;
+        span {
+          font-style: normal;
+          margin-left: 15px;
+          color: #bbb;
+        }
+      }
     }
   }
 
