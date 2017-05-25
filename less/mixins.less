@@ -1,0 +1,61 @@
+@import (reference) "variables.less";
+
+.page_position {
+  width: 100%;
+  max-width: @page__max-width;
+  min-width: @page__min-width;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.larger-than-page(@rules) {
+  @media only screen and (min-width: @page__max-width) {
+    @rules();
+  }
+}
+
+.smaller-than-page(@rules) {
+  @media only screen and (max-width: @page__min-width) {
+    @rules();
+  }
+}
+
+
+.default-padding {
+  padding: 60px 100px;
+}
+
+.spartan {
+  font-family: 'League Spartan';
+  font-weight: normal ;
+  font-style: normal;
+}
+
+.roboto {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+
+.set-theme-color(@color) {
+  // background: lighten(@color, 20%);
+  .header {
+    background: @color;
+  }
+  .title-top {
+    color: @color;
+    &::after {
+      border-color: @color;
+    }
+  }
+  .title-bottom, .title-default { color: @color;}
+  .project {
+    background-color: @color;
+  }
+  main {
+    h1,h2,h3 {
+      color: @color;
+    }
+  }
+
+}

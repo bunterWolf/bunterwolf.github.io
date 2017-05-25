@@ -1,0 +1,185 @@
+@import (reference) "variables.less";
+@import (reference) "mixins.less";
+
+.rotation-controle {
+  .set-theme-color(@color__rotationcontrole);
+
+  .scenario {
+    display: flex;
+    align-items: stretch;
+
+
+    &__text {
+      padding: 4% 0 4% 10%;
+      width: 40%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      color: @color__text__light;
+    }
+    &__img {
+      width: 60%;
+    }
+  }
+
+  .problem {
+    background-color: @color__rotationcontrole;
+    color: rgba(255,255,255,.7);
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    width: 80%;
+    box-sizing: border-box;
+    h2 {
+      color: #fff;
+      margin-bottom: 5px;
+      margin-top: 20px;
+    }
+    p {
+      margin-top: 0;
+    }
+    font-size: 20px;
+    padding: 5% 17%;
+  }
+
+  .idea {
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+
+    img {
+      margin-left: 7%;
+      width: 43%;
+    }
+
+    .text {
+      width: 50%;
+      box-sizing: border-box;
+      padding: 4% 10% 4% 5%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .title-top, .title-bottom {
+        margin-left: 0;
+        margin-top: 0;
+      }
+      .title-bottom {
+        margin-bottom: 10px;
+      }
+      p {
+        font-size: 20px;
+        margin: 0;
+        color: @color__text__light;
+
+      }
+    }
+  }
+
+  .usage {
+    position: relative;
+    margin-top: 200px;
+    img {
+      width: 100%;
+    }
+    .text {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      top: 8.5vw;
+      left: 59vw;
+      bottom: 0;
+      height: auto;
+      margin-right: 10vw;
+
+      .larger-than-page({
+        top: calc(@page__max-width * 0.085);
+        left: calc(@page__max-width * 0.59);
+        margin-right: calc(@page__max-width * 0.1);
+      });
+      .smaller-than-page({
+        top: calc(@page__min-width * 0.085);
+        left: calc(@page__min-width * 0.59);
+        margin-right: calc(@page__min-width * 0.1);
+      });
+      h2, h3 {
+        margin-left: 0;
+        margin-top: 0;
+      }
+      p {
+        font-size: 20px;
+        color: @color__text__light;
+      }
+    }
+  }
+
+  .prototype {
+    display: flex;
+    align-items: stretch;
+    background: @color__rotationcontrole;
+    color: #fff;
+    .text {
+      width: 50%;
+      padding: 4% 10%;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      h2 {
+        color: #fff;
+      }
+      p {
+        font-size: 20px;
+        opacity: 0.7;
+      }
+    }
+    img {
+      width: 50%;
+    }
+  }
+  .sketch {
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid #444;
+
+  }
+
+  .visual {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    box-sizing: border-box;
+    border-bottom: 1px solid #444;
+    h2 {
+      color: #fff;
+      margin-top: 0;
+    }
+    p {
+      opacity: 0.6;
+    }
+    font-size: 20px;
+    padding: 7% 17%;
+  }
+
+  .video {
+    background: #333;
+    padding: 4% 10%;
+    video {
+      box-shadow: 0 0 30px rgba(0,0,0,0.5);
+      border-radius: 5px;
+    }
+    p {
+      text-align: center;
+      color: #aaa;
+      font-size: 20px;
+    }
+  }
+
+  .rendering {
+    width: 100%;
+    display: block;
+  }
+
+}

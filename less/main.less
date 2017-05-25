@@ -1,0 +1,335 @@
+@import (reference) "mixins.less";
+@import (reference) "variables.less";
+
+body, html {
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", Helvetica, Arial;
+  font-weight: 300;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+  min-width: @page__min-width;
+  height: 100%;
+}
+
+h1,h2,h3,h4 {
+  .spartan;
+}
+
+#page {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ddd;
+}
+
+.page_position {
+  .page_position;
+}
+
+.index {
+  .set-theme-color(@color__yellow)
+}
+
+.header {
+
+  @header-ratio: 0.6;
+
+  height: ~'calc(100vw * @{header-ratio})';
+  .larger-than-page({
+    height: calc(@page__max-width * @header-ratio);
+  });
+  box-sizing: border-box;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .default-padding;
+
+
+  &__nav-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+
+  ul {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+      display: inline-block;
+      padding: 0 15px;
+      opacity: 0.5;
+
+      .spartan;
+      font-size: 16px;
+      position: relative;
+      top: 4px; // fix spartan line-height
+      transition: opacity 0.3s;
+      &:hover {
+        opacity: 1;
+      }
+
+      .header--light& {
+        color: #000;
+      }
+
+      .header--dark& {
+        color: #fff;
+      }
+
+    }
+
+  }
+
+  &__logo {
+
+    @logo-height: 34px;
+    @logo-width: 350px;
+
+    @left-small-width: 22px;
+    @left-full-width: 170px;
+
+    @right-small-width: 37px;
+    @right-full-width: 80px;
+
+    @duration: 2.8s;
+
+    .roboto;
+    font-weight: 300;
+    text-transform: uppercase;
+    line-height: @logo-height;
+    font-size: 25px;
+    margin: 0 40px 0 0;
+    line-height: 0;
+    bottom: 2px;
+
+    width: auto;
+    height: @logo-height;
+
+    .block(@name, @small-width, @full-width, @bg-url) {
+      display: inline-block;
+      overflow: hidden;
+      height: @logo-height;
+      width: @small-width;
+      background-image: url(@bg-url);
+      background-size: image-size(@bg-url);
+      background-repeat: no-repeat;
+      background-position: left center;
+      font-size: 0;
+      animation-duration: @duration;
+      transition: width 0.3s ease-out;
+    }
+
+    .header--light &__left {
+      .block(left, @left-small-width, @left-full-width, '../images-vector/sebastian--black.svg');
+    }
+    .header--dark &__left {
+      .block(left, @left-small-width, @left-full-width, '../images-vector/sebastian--white.svg');
+    }
+    &:hover &__left {
+      width: @left-full-width;
+    }
+
+    .header--light &__right {
+      .block(right, @right-small-width, @right-full-width, '../images-vector/wolf--black.svg');
+    }
+    .header--dark &__right {
+      .block(right, @right-small-width, @right-full-width, '../images-vector/wolf--white.svg');
+    }
+    &:hover &__right {
+      width: @right-full-width;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      line-height: 0;
+    }
+  }
+
+  .header__title {
+    @spacing: 30px;
+    .spartan;
+    .header--light& {
+      color: #000;
+    }
+    .header--dark& {
+      color: #fff;
+      h2::after {
+        border-color: #fff
+      }
+    }
+    h2 {
+      font-size: 24px;
+      margin-bottom: 0;
+      &::after {
+        content: '';
+        display: block;
+        margin-top: @spacing;
+        width: 70px;
+        border-bottom: 2px solid #000;
+      }
+    }
+    h1 {
+      font-size: 45px;
+      margin-top: @spacing;
+      margin-bottom: 0;
+    }
+  }
+
+  .header__hi {
+    width: 100px;
+    align-self: center;
+  }
+
+  .header__look {
+
+    .roboto;
+    text-align: center;
+    font-size: 17px;
+    opacity: 0.5;
+    padding-bottom: 20px;
+    position: relative;
+
+    &:after, &:before {
+    	top: 100%;
+    	left: 50%;
+    	border: solid transparent;
+    	content: " ";
+    	height: 0;
+    	width: 0;
+    	position: absolute;
+    	pointer-events: none;
+    }
+
+    &:after {
+    	border-color: rgba(213, 213, 213, 0);
+    	border-top-color: @color__yellow;
+    	border-width: 10px;
+    	margin-left: -10px;
+    }
+    &:before {
+    	border-color: rgba(0, 0, 0, 0);
+    	border-top-color: #000;
+    	border-width: 11px;
+    	margin-left: -11px;
+    }
+  }
+}
+
+.title-top {
+  font-size: 18px;
+
+  .spartan;
+  position: relative;
+  margin-left: 7%;
+  padding-bottom: 15px;
+  margin-top: 150px;
+  margin-bottom: 15px;
+  &::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    width: 70px;
+    border-bottom: 1px solid #000;
+  }
+}
+.title-bottom {
+  font-size: 36px;
+  margin-top: 0;
+  margin-left: 7%;
+
+  .spartan;
+}
+.title-default {
+  margin-top: 150px;
+  font-size: 40px;
+  margin-left: 7%;
+  .spartan;
+}
+
+#main {
+  .page_position;
+  background: #fff;
+  overflow: hidden;
+}
+
+.blur {
+  -webkit-filter: blur(10px);
+  filter: blur(10px);
+  transition: filter 800ms, -webkit-filter 800ms;
+}
+
+.blur.lazyloaded {
+  -webkit-filter: blur(0);
+  filter: blur(0);
+}
+
+.project {
+  padding: 4% 10% 8% 10%;
+  font-size: 18px;
+  background: @color__purebreath;
+  color:#fff;
+
+  a {
+    color: #fff;
+  }
+
+  h2 {
+    color:#fff !important;
+    margin-top: 80px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+  }
+  p, ul, ol {
+    opacity: 0.7;
+    display: block;
+    margin: 0;
+  }
+  li, ol, ul, p {
+    padding: 0;
+  }
+  ol, ul {
+    padding-left: 5px;
+  }
+  li {
+    margin-left: 15px;
+  }
+}
+
+.lity-container {
+  max-width: 1020px !important;
+}
+.lity-iframe-container {
+  padding-top: 33.337% !important;
+}
+
+@import 'smoothstate.less';
+@import 'index.less';
+@import 'unpolished.less';
+@import 'purebreath.less';
+@import 'about.less';
+@import 'bosch.less';
+@import 'ettinger.less';
+@import 'lity-page.less';
+@import 'contact.less';
+@import 'aeroliner.less';
+@import 'rotation-controle.less';
+@import 'wolf.less';

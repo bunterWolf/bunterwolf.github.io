@@ -1,0 +1,28 @@
+
+
+@import (reference) "mixins.less";
+
+.contact {
+
+  .set-theme-color(@color__bosch);
+  .header {
+    // height: 100vh;
+
+    &__contact {
+      color: #fff;
+
+      font-size: 27px;
+      a {
+        color: #fff;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      p {
+        margin: 7px 0;
+      }
+    }
+  }
+
+}

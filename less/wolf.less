@@ -1,0 +1,147 @@
+@import (reference) "variables.less";
+@import (reference) "mixins.less";
+
+.wolf {
+  .set-theme-color(@color__wolf);
+
+  .intro {
+    display: flex;
+    align-items: stretch;
+    &__text {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 4% 10%;
+      box-sizing: border-box;
+      &__inner {
+        color: @color__wolf;
+        font-size: 1.5vw;
+        .larger-than-page({
+          font-size: calc(@page__max-width * 0.015);
+        });
+        .smaller-than-page({
+          font-size: calc(@page__min-width * 0.015);
+        });
+      }
+    }
+    &__logo {
+      width: 50%;
+      line-height: 0;
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .mood {
+    width: 100%;
+    display: block;
+  }
+
+  .website {
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 150px;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding-top: 57%;
+      background: @color__wolf;
+    }
+    h3 {
+      margin-top: 150px;
+    }
+    h2,h3 {
+      position: relative;
+      z-index: 1;
+      color: #fff;
+      border-color: #fff;
+    }
+    .visit {
+      color: #93D9F8;
+      display: inline-block;
+      text-transform: uppercase;
+      .spartan;
+      font-size: 17px;
+      letter-spacing: 2px;
+      padding: 10px 30px 5px 30px;
+      text-decoration: none;
+      margin-left: 7%;
+      border: 1px solid #93D9F8;
+      position: relative;
+      z-index: 1;
+
+      &:hover {
+        background: rgba(255,255,255, 0.1);
+        transition: background 0.3s ease-out;
+      }
+    }
+
+    .screens {
+      margin-top: 130px;
+      display: flex;
+      position: relative;
+      z-index: 1;
+      justify-content: space-around;
+      align-items: center;
+      img {
+        width: 40%;
+
+      }
+    }
+  }
+
+  .elixator {
+    margin-top: 200px;
+    .title-top, .title-bottom {
+      color: #CDAC9F;
+      &:after {
+        border-color: #CDAC9F;
+      }
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .package {
+    margin-top: 200px;
+    .title-top, .title-bottom {
+      color: #3DA149;
+      &:after {
+        border-color: #3DA149;
+      }
+    }
+    .side-by-side {
+      display: flex;
+      align-items: stretch;
+      img {
+        display: block;
+        width: 50%;
+      }
+      .text {
+        width: 50%;
+        padding: 4% 10%;
+        box-sizing: border-box;
+        background: #3DA149;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .inner {
+          font-size: 23px;
+          color: #fff;
+        }
+      }
+    }
+    img.bottels {
+      display: block;
+      width: 100%;
+    }
+  }
+}
