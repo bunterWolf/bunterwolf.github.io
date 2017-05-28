@@ -1,0 +1,240 @@
+
+
+@import (reference) "mixins.less";
+
+.ufo {
+
+  .set-theme-color(@color__ufo);
+
+  main {
+
+    @color__text: #A5A5A5;
+    @color__text__dark: #616465;
+    color: @color__text;
+    .ufo-header__logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin: 10% 0;
+      .lato;
+      font-size: 19px;
+      font-weight: 900;
+
+      img {
+        width: 100px;
+        margin-bottom: 12px;
+      }
+    }
+
+    .intro {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      img {
+        max-width: 100%;
+        width: 1754px;
+      }
+    }
+
+    .h-center {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 1.4;
+      margin: 10% 0 3% 0;
+      .lato;
+    }
+
+    .box {
+      background: #41373D;
+      border-radius: 10px;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px 30px;
+      width: 600px;
+      max-width: 80%;
+      box-sizing: border-box;
+      text-decoration: none;
+      font-size: 18px;
+      letter-spacing: 2px;
+
+      .github-logo {
+        width: 18%;
+        margin-left: 30px;
+      }
+
+      &--red {
+        background: #E93657;
+      }
+    }
+    a.box {
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+
+    .videos {
+      margin: 10% 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @media(max-width: 800px) {
+        flex-direction: column;
+      }
+
+      .favbar, .rich-text {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        text-align: right;
+        flex-shrink: 1;
+        margin: 0;
+        max-width: 50%;
+        @media(max-width: 1400px) {
+          flex-direction: column;
+          align-items: center;
+          text-align: center !important;
+          h3 {
+            margin-top: 50px;
+          }
+          h4 {
+            margin-bottom: 20px;
+          }
+        }
+        @media(max-width: 800px) {
+          max-width: 100%;
+        }
+      }
+      .favbar {
+        h3 {
+          margin-top: 150px;
+        }
+      }
+      .rich-text {
+        text-align: left;
+        align-items: center;
+        margin-top: 120px;
+      }
+
+      video {
+        display: flex;
+        flex-shrink: 1;
+        margin: 0 50px;
+        max-width: 100%;
+        border: 0;
+      }
+    }
+
+    .full {
+      margin: 10% 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      video {
+        max-width: 100%;
+      }
+    }
+
+    .release {
+      margin: 10% 20px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    h3,h4 {
+      color: @color__text__dark;
+    }
+
+    h3 {
+      font-size: 28px;
+      margin: 0;
+    }
+    h4 {
+      font-size: 15px;
+      margin: 0;
+      margin-bottom: 30px;
+    }
+
+    ul, li {
+      font-size: 19px;
+      margin: 10px 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    video {
+      flex-shrink: 1;
+    }
+
+    .video-shadow {
+      border-radius: 5px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+
+    footer {
+      border-top: 1px solid #ccc;
+      background: #f1f1f1;
+      padding: 2% 2%;
+      text-align: left;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+
+    .contact, .footer__github {
+      width: 30%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      h3 {
+        font-size: 17px;
+      }
+
+      a{
+        opacity: 0.5;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+    }
+
+    h1,h2,h3,h4 {
+      .lato;
+      color: @color__text;
+    }
+
+    .e-mail {
+      &:hover {
+        opacity: 0.5;
+      }
+      cursor: pointer;
+    }
+    .e-mail:before {
+      content: attr(data-website) "\0040" attr(data-user);
+      unicode-bidi: bidi-override;
+      direction: rtl;
+    }
+
+    .spartan {
+      font-family: 'League Spartan';
+      font-weight: normal ;
+      font-style: normal;
+    }
+
+    .lato {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
+    }
+  }
+}
