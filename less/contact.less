@@ -29,9 +29,8 @@
         cursor: pointer;
       }
       .e-mail:before {
-        content: attr(data-website) "\0040" attr(data-user);
+        content: attr(data-user) "\0040" attr(data-website) ;
         unicode-bidi: bidi-override;
-        direction: rtl;
       }
     }
   }
