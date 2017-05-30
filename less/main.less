@@ -314,6 +314,36 @@ h1,h2,h3,h4 {
   }
 }
 
+.back {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10%;
+
+  h2 {
+    margin: 20px 0;
+  }
+
+  a {
+    color: #aaa;
+    display: inline-block;
+    text-transform: uppercase;
+    .spartan;
+    font-size: 17px;
+    letter-spacing: 2px;
+    padding: 10px 30px 5px 30px;
+    text-decoration: none;
+    border: 1px solid #aaa;
+    position: relative;
+    z-index: 1;
+
+    &:hover {
+      background: rgba(255,255,255, 0.1);
+      transition: background 0.3s ease-out;
+    }
+  }
+}
+
 .lity-container {
   max-width: 1020px !important;
 }
