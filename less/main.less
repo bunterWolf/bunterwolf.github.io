@@ -112,7 +112,6 @@ h1,h2,h3,h4 {
     .roboto;
     font-weight: 300;
     text-transform: uppercase;
-    line-height: @logo-height;
     font-size: 25px;
     margin: 0 40px 0 0;
     line-height: 0;
@@ -122,7 +121,7 @@ h1,h2,h3,h4 {
     height: @logo-height;
 
     .block(@name, @small-width, @full-width, @bg-url) {
-      display: inline-block;
+      display: block;
       overflow: hidden;
       height: @logo-height;
       width: @small-width;
@@ -158,8 +157,9 @@ h1,h2,h3,h4 {
     a {
       color: #fff;
       text-decoration: none;
-      display: block;
+      display: flex;
       line-height: 0;
+      height: @logo-height;
     }
   }
 
