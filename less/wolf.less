@@ -49,7 +49,7 @@
       top: 0;
       left: 0;
       right: 0;
-      padding-top: 57%;
+      padding-top: 52%;
       background: @color__wolf;
     }
     h3 {
@@ -86,11 +86,49 @@
       display: flex;
       position: relative;
       z-index: 1;
-      justify-content: space-around;
+      justify-content: space-between;
       align-items: center;
-      img {
-        width: 40%;
+      margin: 5% 7%;
 
+      &__desktop {
+        width: 75%;
+        position: relative;
+        &__browser {
+          width: 100%;
+        }
+        &__website {
+          position: absolute;
+          left: 5px;
+          right: 5px;
+          bottom: 11px;
+          top: 5.8%;
+          overflow: hidden;
+          img {
+            width: 100%;
+            animation-duration: 10s;
+            animation-name: websitemove;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+          }
+        }
+      }
+      &__mobile {
+        width: 20%;
+        position: relative;
+        &__browser {
+          width: 100%;
+        }
+        &__website {
+          position: absolute;
+          left: 6.5%;
+          right: 6.5%;
+          bottom: 5px;
+          top: 12%;
+          overflow: hidden;
+          img {
+            width: 100%;
+          }
+        }
       }
     }
   }
@@ -143,5 +181,29 @@
       display: block;
       width: 100%;
     }
+  }
+}
+
+@keyframes websitemove {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  5% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0);
+
+  }
+  95% {
+    opacity: 1;
+    transform: translateY(-69%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-69%);
   }
 }
